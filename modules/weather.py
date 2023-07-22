@@ -1,4 +1,17 @@
 from services.noaa import *
+from rich.console import Console
+
+
+def weather_forecast_from_station():
+    console = Console()
+    value = console.input("What is [i]your[/i] [bold red]name[/]? :smiley: ")
+    print(value)
+
+def weather_forecast_from_geo():
+    return
+
+def alerts_from_area_code():
+    return
 
 def get_forecast_from_lat_lon(lat, long):
     result = get_point_lat_lon(lat,long)
