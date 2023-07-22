@@ -5,7 +5,11 @@
 - APT image decoder
 - Imagery Analysis
 
+- Menu Display
+
+- Settings
 - Log to CSV
+- Color? lol
 
 NOAA sats
 
