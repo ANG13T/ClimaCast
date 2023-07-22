@@ -34,5 +34,12 @@ def get_alerts_by_area(area):
     response = requests.get(api_url + format_api)
     print(response.json())
 
+def get_value_from_url(url):
+    response = requests.get(url)
+    return response.json()
+
 def check_coordinates(lat, long):
     return abs(lat) <= 90 and abs(long) <= 180
+
+def derive_value_from_api(api_url):
+    return api_url.split("/")[-1]
