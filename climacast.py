@@ -1,3 +1,3 @@
-from modules.noaa import *
+from modules.weather import *
 
-get_point_lat_lon(39.7456, -97.0892)
+get_forecast_from_lat_lon(39.7456, -97.0892)

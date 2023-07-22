@@ -1,5 +1,4 @@
 import requests
-import json
 
 api_url = "https://api.weather.gov"
 
@@ -7,9 +6,10 @@ def get_point_lat_lon(lat, long):
     if check_coordinates(lat, long):
         format_api = '/points/{},{}'.format(lat, long)
         response = requests.get(api_url + format_api)
-        print(response.json())
+        return response.json()['properties']
     else: 
         print("ERROR: Use Valid GPS Coordinate")
+        return None
 
 def get_station_metadata(station_id):
     format_api = '/stations/{}'.format(station_id)
@@ -36,5 +36,3 @@ def get_alerts_by_area(area):
 
 def check_coordinates(lat, long):
     return abs(lat) <= 90 and abs(long) <= 180
-
-
