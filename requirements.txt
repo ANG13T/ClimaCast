@@ -1,3 +1,4 @@
 rich==13.4.2
 simple_term_menu==1.6.1
 requests==2.25.1
+simple_term_menu==1.6.1
