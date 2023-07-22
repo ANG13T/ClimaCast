@@ -39,7 +39,12 @@ def get_value_from_url(url):
     return response.json()
 
 def check_coordinates(lat, long):
-    return abs(lat) <= 90 and abs(long) <= 180
+    try: 
+        lat = float(lat)
+        long = float(long)
+        return abs(lat) <= 90 and abs(long) <= 180
+    except:
+        return False
 
 def derive_value_from_api(api_url):
     return api_url.split("/")[-1]

@@ -5,9 +5,9 @@ from modules.weather import *
 try: 
     def run_weather():
         run_weather.options = [
-            "🌨 Weather Forecast From Station",
+            "🌨  Weather Forecast From Station",
             None,
-            "🗺 Weather Forecast From Geo Coordinates",
+            "🗺  Weather Forecast From Geo Coordinates",
             None,
             "📢 Get Alerts by Area Code",
             None,

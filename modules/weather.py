@@ -4,19 +4,23 @@ from rich.console import Console
 
 def weather_forecast_from_station():
     console = Console()
-    value = console.input("What is [i]your[/i] [bold red]name[/]? :smiley: ")
+    value = console.input("Enter [bold blue]Station ID[/]: ")
     print(value)
 
 def weather_forecast_from_geo():
-    return
+    console = Console()
+    result = None
+    while result == None:
+        lat = console.input("Enter [bold blue]Latitude[/]: ")
+        lon = console.input("Enter [bold blue]Longitude[/]: ")
+        print(lon)
+        result = get_point_lat_lon(lat,lon)
+        # print(result)
+    # print_forecast_data(result)
 
 def alerts_from_area_code():
     return
 
-def get_forecast_from_lat_lon(lat, long):
-    result = get_point_lat_lon(lat,long)
-    print(result)
-    # print_forecast_data(result)
 
 def get_forecast(url):
     result = get_value_from_url(url)
