@@ -27,8 +27,9 @@ def weather_forecast_from_geo():
         if result != None:
             print_geo_data(lat, lon, result)
             get_forecast(result['forecast'])
-            # TODO: show nearby stations
-       
+            stations = get_stations_from_point(lat, lon)
+            print_station_info(lat, lon, stations)
+   
 
 def alerts_from_area_code():
     console = Console()
@@ -54,6 +55,37 @@ def print_area_metadata(id, data):
     print_data_row("📡 Identifier", id)
     print_data_row("🌧  Notes", data["title"])
     print_data_row("🕙 Time Stamp", data["updated"])
+
+def print_station_info(lat, lon, stations):
+    table_title = "Stations for ({}, {})".format(lat, lon)
+    table = Table(title=table_title)
+    console = Console()
+    table.add_column("Name", style="cyan",  justify="center")
+    table.add_column("GPS", style="cyan",  justify="center")
+    table.add_column("Elevation", style="cyan", justify="center")
+    table.add_column("Station ID", style="cyan",  justify="center")
+    table.add_column("Time Zone", style="cyan",  justify="center")
+    table.add_column("County", style="cyan",  justify="center")
+
+    stations = stations["features"]
+
+    for station in stations: 
+        gps = "({}, {})".format(str(station["geometry"]["coordinates"][0]), str(station["geometry"]["coordinates"][1]))
+        props = station["properties"]
+        elevation = str(props["elevation"]["value"]) + "m"
+        table.add_row(
+            props["name"],
+            gps,
+            check_no_reading(elevation),
+            props["stationIdentifier"],
+            props["timeZone"],
+            derive_value_from_api(props["county"])
+        )
+
+    console.print("\n")
+    console = Console()
+    console.print(table)
+
 
 def print_alerts(id, alerts):
     alerts = alerts["features"]
