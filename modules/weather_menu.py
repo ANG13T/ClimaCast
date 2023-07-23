@@ -1,6 +1,9 @@
 from simple_term_menu import TerminalMenu
 from time import sleep
 from modules.weather import *
+from rich.console import Console
+
+console = Console()
 
 try: 
     def run_weather():
@@ -35,11 +38,11 @@ try:
 
 except KeyboardInterrupt:
     print("\n")
-    print("[bold][deep_pink1] Exiting...[/deep_pink1][/bold]")
+    console.print("[bold][cyan] Exiting ClimaCast [/cyan][/bold]")
     sleep(1)
 
 except TypeError:
     # os.system("clear")
     # brute_banner()
-    print(f"\n[bold][red] Command Not Understood [/red][/bold]")
+    console.print("\n[bold][red] INVALID COMMAND [/red][/bold]")
     # run_again()

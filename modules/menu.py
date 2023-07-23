@@ -2,6 +2,7 @@ from modules import *
 from time import sleep
 from simple_term_menu import TerminalMenu
 from modules.rerun import rerun
+from modules.about import about
 
 try:
     #main_menu()
@@ -57,9 +58,7 @@ try:
             print("hi")
 
         if menu.menu_entry_index == 5:
-            # about()
-            # run_again()
-            print("hi")
+            about()
         
         if menu.menu_entry_index == 6:
             print("[bold][deep_pink1] Exiting...[/deep_pink1][/bold]")
