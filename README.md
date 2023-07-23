@@ -34,6 +34,8 @@ python3 climacast.py
 
 /alerts/active/area/{area}
 
+39.7456,-97.0892
+
 - Get Info by Station
     - Get Info by Zone
 - Get Info by Geocoordinates
