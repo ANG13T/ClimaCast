@@ -30,14 +30,14 @@ def get_stations_from_point(lat, long):
     if check_coordinates(lat, long):
         format_api = '/points/{},{}/stations'.format(lat, long)
         response = requests.get(api_url + format_api)
-        print(response.json())
+        return response.json()
     else: 
         print("ERROR: Use Valid GPS Coordinate")
 
 def get_alerts_by_area(area):
     format_api = '/alerts/active/area/{}'.format(area)
     response = requests.get(api_url + format_api)
-    print(response.json())
+    return response.json()
 
 def get_value_from_url(url):
     response = requests.get(url)

@@ -31,12 +31,69 @@ def weather_forecast_from_geo():
        
 
 def alerts_from_area_code():
-    return
+    console = Console()
+    value = console.input("Enter [bold blue]Area Code[/]: ")
+    result = get_alerts_by_area(value)
+
+    if result != None: 
+        print_area_metadata(value, result)
+        print_alerts(value, result)
+    else:
+        console.print("[red]INVALID AREA CODE[/]")
+
 
 def print_data_row(title, value):
     value = "• [bold]{}:[/] [cyan]{}[/]".format(title, value)
     console = Console()
     console.print(value)
+
+def print_area_metadata(id, data):
+    table_title = "\n [bold blue underline]Information for Area {}[/]".format(id)
+    console = Console()
+    console.print(table_title + "\n")
+    print_data_row("📡 Identifier", id)
+    print_data_row("🌧  Notes", data["title"])
+    print_data_row("🕙 Time Stamp", data["updated"])
+
+def print_alerts(id, alerts):
+    alerts = alerts["features"]
+    table_title = "Alerts for {}".format(id)
+    table = Table(title=table_title)
+    table.add_column("Area", style="cyan",  justify="center")
+    table.add_column("Sent Timestamp", style="cyan", justify="center")
+    table.add_column("Effective Timestamp", style="cyan",  justify="center")
+    table.add_column("Status", style="cyan",  justify="center")
+    table.add_column("Type", style="cyan",  justify="center")
+    table.add_column("Category", style="cyan",  justify="center")
+    table.add_column("Severity", style="cyan",  justify="center")
+    table.add_column("Certainty", style="cyan",  justify="center")
+    table.add_column("Urgency", style="cyan",  justify="center")
+    table.add_column("Event", style="cyan",  justify="center")
+    table.add_column("Sender", style="cyan",  justify="center")
+    table.add_column("Headline", style="cyan",  justify="center")
+    table.add_column("Instruction", style="cyan",  justify="center")
+    
+    for al in alerts:
+        al = al["properties"]
+        table.add_row(
+            al["areaDesc"],
+            al["sent"],
+            al["effective"],
+            al["status"],
+            al["messageType"],
+            al["category"],
+            al["severity"],
+            al["certainty"],
+            al["urgency"],
+            al["event"],
+            al["senderName"],
+            al["headline"],
+            al["instruction"]
+        )
+
+    console = Console()
+    console.print(table)
+
 
 def print_station_metadata(id, data):
     table_title = "\n [bold blue underline]Information for Station {}[/]".format(id)
