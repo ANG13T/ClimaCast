@@ -28,6 +28,8 @@ python3 climacast.py
 
 "/stations/{stationId}/observations" Returns a list of observations for a given station
 
+0004W
+
 /stations/{stationId}" Returns metadata about a given observation station
 
 /points/{point}/stations - Returns a list of observation stations for a given point

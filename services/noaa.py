@@ -19,12 +19,12 @@ def get_point_lat_lon(lat, long):
 def get_station_metadata(station_id):
     format_api = '/stations/{}'.format(station_id)
     response = requests.get(api_url + format_api)
-    print(response.json())
+    return response.json()
 
 def get_station_observations(station_id):
     format_api = '/stations/{}/observations'.format(station_id)
     response = requests.get(api_url + format_api)
-    print(response.json())
+    return response.json()
 
 def get_stations_from_point(lat, long):
     if check_coordinates(lat, long):
