@@ -17,8 +17,6 @@ try:
             None,
             "🌎  Meterological Image Analysis",
             None,
-            "🛠  Settings",
-            None,
             "ℹ️  About and Usage",
             None,
             "Exit ClimaCast",
@@ -51,24 +49,19 @@ try:
             # about()
             # run_again()
             print("hi")
-        
-        if menu.menu_entry_index == 4:
-            # about()
-            # run_again()
-            print("hi")
 
-        if menu.menu_entry_index == 5:
+        if menu.menu_entry_index == 4:
             about()
         
-        if menu.menu_entry_index == 6:
-            print("[bold][deep_pink1] Exiting...[/deep_pink1][/bold]")
+        if menu.menu_entry_index == 5:
+            print("[bold][blue] Exiting...[/blue][/bold]")
             sleep(1)
 
     menu()
 
 except KeyboardInterrupt:
     print("\n")
-    print("[bold][deep_pink1] Exiting...[/deep_pink1][/bold]")
+    print("[bold][blue] Exiting...[/blue][/bold]")
     sleep(1)
 
 except TypeError:

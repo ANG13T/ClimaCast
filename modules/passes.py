@@ -1,29 +1,77 @@
 from services.n2yo import *
+from rich.console import Console
 from simple_term_menu import TerminalMenu
 
 class Satellite:
     def __init__(self, name, id):
         self.name = name
-        self.nora_id = id
+        self.norad_id = id
 
 
 def retrieve_radio_passes():
+    console = Console()
     selected = select_NOAA_sat()
 
     if selected != None:
-        print(get_radio_pass())
+        result = False
+
+        while result != True:
+            lat = console.input("Enter [bold blue]Latitude[/]: ")
+            lon = console.input("Enter [bold blue]Longitude[/]: ")
+            alt = console.input("Enter [bold blue]Altitude[/]: ")
+            days = console.input("Enter [bold blue]Days[/]: ")
+            elevation = console.input("Enter [bold blue]Elevation[/]: ")
+            result = verify_values([alt, days, elevation])
+            geo_res = check_coordinates(lat, lon)
+            if geo_res == None:
+                result = None
+
+            if result == True:
+                print(get_radio_pass(selected.norad_id, lat, lon, alt, days, elevation))
+
 
 def retrieve_visual_passes():
+    console = Console()
     selected = select_NOAA_sat()
 
     if selected != None:
-        print(get_visual_pass())
+        result = False
+
+        while result != True:
+            lat = console.input("Enter [bold blue]Latitude[/]: ")
+            lon = console.input("Enter [bold blue]Longitude[/]: ")
+            alt = console.input("Enter [bold blue]Altitude[/]: ")
+            days = console.input("Enter [bold blue]Days[/]: ")
+            vis = console.input("Enter [bold blue]Min Visibility[/]: ")
+            result = verify_values([alt, days, vis])
+            geo_res = check_coordinates(lat, lon)
+            if geo_res == None:
+                result = None
+
+            if result == True:
+                print(get_visual_pass(selected.norad_id, lat, lon, alt, days, vis))
+
 
 def retrieve_positions():
+    console = Console()
     selected = select_NOAA_sat()
 
     if selected != None:
-        print(get_positions())
+        result = False
+
+        while result != True:
+            lat = console.input("Enter [bold blue]Latitude[/]: ")
+            lon = console.input("Enter [bold blue]Longitude[/]: ")
+            alt = console.input("Enter [bold blue]Altitude[/]: ")
+            sec = console.input("Enter [bold blue]Min Seconds[/]: ")
+            result = verify_values([alt, sec])
+            geo_res = check_coordinates(lat, lon)
+            if geo_res == None:
+                result = None
+
+            if result == True:
+                print(get_positions(selected.norad_id, lat, lon, alt, sec))
+
 
 def select_NOAA_sat():
     select_NOAA_sat.options = []
@@ -75,3 +123,4 @@ def select_NOAA_sat():
         return None
     else:
         return noaa_sats[select_NOAA_sat.menu_entry_index]
+    

@@ -26,4 +26,4 @@ try:
 except KeyboardInterrupt:
     os.system("clear")
     console.print("\n")
-    console.print("[bold][deep_pink1] Exiting...[/deep_pink1][/bold]")
+    console.print("[bold][blue] Exiting...[/blue][/bold]")
