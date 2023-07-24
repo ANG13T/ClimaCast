@@ -12,7 +12,7 @@ try:
             None,
             "📡 Retrieve Radio Passes",
             None,
-            "🛰  Get Current Telemetry (TLE)",
+            "🛰  Retrieve Positioning",
             None,
             "Back to Main Menu"
         ]

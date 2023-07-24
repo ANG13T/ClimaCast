@@ -1,5 +1,4 @@
 import requests
-import json
 
 api_url = "https://api.weather.gov"
 
