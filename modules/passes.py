@@ -1,5 +1,4 @@
-import os
-from dotenv import load_dotenv
+from services.n2yo import *
 from simple_term_menu import TerminalMenu
 
 class Satellite:
@@ -12,19 +11,19 @@ def retrieve_radio_passes():
     selected = select_NOAA_sat()
 
     if selected != None:
-        return
+        print(get_radio_pass())
 
 def retrieve_visual_passes():
     selected = select_NOAA_sat()
 
     if selected != None:
-        return
+        print(get_visual_pass())
 
-def retrieve_TLE():
+def retrieve_positions():
     selected = select_NOAA_sat()
 
     if selected != None:
-        return
+        print(get_positions())
 
 def select_NOAA_sat():
     select_NOAA_sat.options = []

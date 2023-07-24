@@ -25,4 +25,3 @@ def get_positions(norad_id, lat, lng, alt, seconds):
     url = api_url + format_api + "&apiKey=" + get_api_key()
     response = requests.get(url)
     return response.json()
-

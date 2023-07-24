@@ -31,7 +31,7 @@ try:
             retrieve_radio_passes()
 
         if run_pass.menu_entry_index == 2:
-            retrieve_TLE()
+            retrieve_positions()
         
 
     run_pass()
