@@ -10,9 +10,9 @@ try:
         run_pass.options = [
             "🔭 Retrieve Visual Passes",
             None,
-            "📡  Retrieve Radio Passes",
+            "📡 Retrieve Radio Passes",
             None,
-            "🛰 Get Current Telemetry (TLE)",
+            "🛰  Get Current Telemetry (TLE)",
             None,
             "Back to Main Menu"
         ]

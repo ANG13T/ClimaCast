@@ -9,15 +9,26 @@ class Satellite:
 
 
 def retrieve_radio_passes():
-    return
+    selected = select_NOAA_sat()
+
+    if selected != None:
+        return
 
 def retrieve_visual_passes():
-    return
+    selected = select_NOAA_sat()
+
+    if selected != None:
+        return
 
 def retrieve_TLE():
-    return
+    selected = select_NOAA_sat()
+
+    if selected != None:
+        return
 
 def select_NOAA_sat():
+    select_NOAA_sat.options = []
+
     noaa_sats = [
         Satellite("NOAA-21 (JPSS-2)", 54234),
         Satellite("NOAA 20 (JPSS 1)", 43013),
@@ -46,10 +57,10 @@ def select_NOAA_sat():
     ]
 
     for sat in noaa_sats:
-        select_NOAA_sat.options.push(sat.name + " " + str(sat.nora_id))
+        select_NOAA_sat.options.append(sat.name + " (" + str(sat.nora_id) + ")")
 
-    select_NOAA_sat.options.push(None)
-    select_NOAA_sat.options.push("Back to Main Menu")
+    select_NOAA_sat.options.append(None)
+    select_NOAA_sat.options.append("Back to Main Menu")
 
     select_NOAA_sat.terminal_menu = TerminalMenu(
         select_NOAA_sat.options,
@@ -61,4 +72,7 @@ def select_NOAA_sat():
 
     select_NOAA_sat.menu_entry_index = select_NOAA_sat.terminal_menu.show() 
 
-    print(select_NOAA_sat.menu_entry_index)
+    if select_NOAA_sat.menu_entry_index == 25 or select_NOAA_sat.menu_entry_index == 24:
+        return None
+    else:
+        return noaa_sats[select_NOAA_sat.menu_entry_index]

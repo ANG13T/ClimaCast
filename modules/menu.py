@@ -39,8 +39,8 @@ try:
             rerun()
 
         if menu.menu_entry_index == 1:
-            #import modules.subdomain_scanner
-            print("hi")
+            import modules.passes_menu
+            rerun()
 
         if menu.menu_entry_index == 2:
             # modify_wordlist()
