@@ -56,3 +56,23 @@ apt decoder
 # FOURTH
 
 https://makersportal.com/blog/2019/7/8/satellite-imagery-analysis-in-python-part-i-goes-16-data-netcdf-files-and-the-basemap-toolkit
+
+
+
+- PASS prediction
+
+- select NOAA satellite
+    - radio or visual pass
+        - show pass prediction log
+
+- Back to Menu Options
+
+
+
+There are a few ways to acquire public satellite data - the first being a government distribution outlet called the Archive Information Request System (AIRS). The AIRS archive request site looks like the following:
+
+
+GOES-16
+
+# All About NOAA Sats
+https://www.n2yo.com/satellites/?c=4
