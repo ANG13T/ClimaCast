@@ -144,3 +144,34 @@ def print_radio_passes(name, passes):
         )
 
     console.print(table)
+
+def print_positions(name, positions):
+    positions = positions["positions"]
+    table_title = "Positions for {}".format(name)
+    table = Table(title=table_title)
+    console = Console()
+    table.add_column("GPS", style="cyan",  justify="center")
+    table.add_column("Azimuth", style="cyan", justify="center")
+    table.add_column("Elevation", style="cyan",  justify="center")
+    table.add_column("Right Ascension", style="cyan",  justify="center")
+    table.add_column("Declination", style="cyan",  justify="center")
+    table.add_column("Timestamp", style="cyan",  justify="center")
+
+    for pos in positions:
+        gps = "(" + str(pos['satlatitude']) + ", " + str(pos['satlongitude']) + ")"
+        az = str(pos['azimuth']) + "º"
+        elevation = str(pos['elevation']) + "º"
+        ra = str(pos['ra']) + "º"
+        dec = str(pos['dec']) + "º"
+        timestamp = str(pos['timestamp']) + "sec"
+
+        table.add_row(
+            gps,
+            az,
+            elevation,
+            ra,
+            dec,
+            timestamp
+        )
+
+    console.print(table)

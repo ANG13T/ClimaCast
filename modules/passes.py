@@ -72,7 +72,8 @@ def retrieve_positions():
                 result = None
 
             if result == True:
-                print(get_positions(selected.norad_id, lat, lon, alt, sec))
+                positions = get_positions(selected.norad_id, lat, lon, alt, sec)
+                print_positions(selected.name, positions)
 
 
 def select_NOAA_sat():
@@ -125,4 +126,3 @@ def select_NOAA_sat():
         return None
     else:
         return noaa_sats[select_NOAA_sat.menu_entry_index]
-    
