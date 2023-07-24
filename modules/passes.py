@@ -27,7 +27,8 @@ def retrieve_radio_passes():
                 result = None
 
             if result == True:
-                print(get_radio_pass(selected.norad_id, lat, lon, alt, days, elevation))
+                passes = get_radio_pass(selected.norad_id, lat, lon, alt, days, elevation)
+                print_radio_passes(selected.name, passes)
 
 
 def retrieve_visual_passes():
@@ -49,7 +50,8 @@ def retrieve_visual_passes():
                 result = None
 
             if result == True:
-                print(get_visual_pass(selected.norad_id, lat, lon, alt, days, vis))
+                passes = get_visual_pass(selected.norad_id, lat, lon, alt, days, vis)
+                print_vis_passes(selected.name, passes)
 
 
 def retrieve_positions():
@@ -104,7 +106,7 @@ def select_NOAA_sat():
     ]
 
     for sat in noaa_sats:
-        select_NOAA_sat.options.append(sat.name + " (" + str(sat.nora_id) + ")")
+        select_NOAA_sat.options.append(sat.name + " (" + str(sat.norad_id) + ")")
 
     select_NOAA_sat.options.append(None)
     select_NOAA_sat.options.append("Back to Main Menu")
