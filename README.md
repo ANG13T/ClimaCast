@@ -65,6 +65,10 @@ https://makersportal.com/blog/2019/7/8/satellite-imagery-analysis-in-python-part
     - radio or visual pass
         - show pass prediction log
 
+    1. Radio Pass
+    2. Visual Pass
+    3. TLE and Current Position 
+
 - Back to Menu Options
 
 
