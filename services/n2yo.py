@@ -25,7 +25,6 @@ def get_visual_pass(norad_id, lat, lng, alt, days, vis):
 def get_positions(norad_id, lat, lng, alt, seconds):
     format_api = '/positions/{}/{}/{}/{}/{}'.format(norad_id, lat, lng, alt, seconds)
     url = api_url + format_api + "&apiKey=" + get_api_key()
-    print(url)
     response = requests.get(url)
     return response.json()
 
