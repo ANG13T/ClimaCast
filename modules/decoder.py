@@ -1,9 +1,11 @@
 import numpy
 import scipy.io.wavfile
 import scipy.signal
+from rich.console import Console
 import sys
 import PIL
 
+console = Console()
 
 class Decoder(object):
 
@@ -108,3 +110,36 @@ def decode_file(file_path, output_path):
         output_path = None
 
     apt.decode(output_path)
+
+def resample_file(file_path, output_path):
+    apt = Decoder(file_path)
+
+    if len(output_path) > 0:
+        output_path = "output.png"
+    else:
+        output_path = None
+
+    apt.resample(output_path)
+
+def run_decode_file():
+    result = False
+
+    while result == False:
+        input_file = console.input("Enter [bold blue]NOAA Recording[/]: ")
+        output_file = console.input("Enter [bold blue]Output File[/]: ")
+
+        if len(input_file) > 0:
+            result = True
+            decode_file(input_file, output_file)
+
+
+def run_resample_file():
+    result = False
+
+    while result == False:
+        input_file = console.input("Enter [bold blue]NOAA Recording[/]: ")
+        output_file = console.input("Enter [bold blue]Output File[/]: ")
+
+        if len(input_file) > 0:
+            result = True
+            resample_file(input_file, output_file)
