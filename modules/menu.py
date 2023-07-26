@@ -41,14 +41,12 @@ try:
             rerun()
 
         if menu.menu_entry_index == 2:
-            # modify_wordlist()
-            # run_again()
-            print("hi")
+            import modules.decoder_menu
+            rerun()
 
         if menu.menu_entry_index == 3:
             # about()
             # run_again()
-            print("hi")
 
         if menu.menu_entry_index == 4:
             about()

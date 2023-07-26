@@ -82,3 +82,8 @@ GOES-16
 https://www.n2yo.com/satellites/?c=4
 
 https://carpentries-incubator.github.io/geospatial-python/05-access-data/
+
+Sentinel-2 Cloud-Optimized GeoTIFFs
+https://carpentries-incubator.github.io/geospatial-python/05-access-data/
+
+- explain STAC and GEOTIFFs and TIFFs file format
