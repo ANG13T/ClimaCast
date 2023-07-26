@@ -2,7 +2,6 @@ import numpy
 import scipy.io.wavfile
 import scipy.signal
 from rich.console import Console
-import sys
 import PIL
 
 console = Console()

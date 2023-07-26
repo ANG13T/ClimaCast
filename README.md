@@ -80,3 +80,5 @@ GOES-16
 
 # All About NOAA Sats
 https://www.n2yo.com/satellites/?c=4
+
+https://carpentries-incubator.github.io/geospatial-python/05-access-data/
