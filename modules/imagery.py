@@ -70,8 +70,10 @@ def download_tiff(output, lat, lng):
     download_tiff.menu_entry_index = download_tiff.terminal_menu.show()
     sel_url = urls[download_tiff.menu_entry_index]
     nir = rioxarray.open_rasterio(sel_url)
+    console.print("\n[cyan bold]RASTER METADATA:[/] \n")
     console.print(nir)
     nir.rio.to_raster(output)
+    console.print("\n[green bold]SAVED SATELLITE RASTER DATA TO {}[/]".format(output))
 
 
 def retrieve_jpeg_image():
