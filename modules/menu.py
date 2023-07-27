@@ -56,19 +56,19 @@ try:
             rerun()
         
         if menu.menu_entry_index == 5:
-            print("[bold][blue] Exiting...[/blue][/bold]")
+            console.print("[bold][blue] Exiting...[/blue][/bold]")
             sleep(1)
 
     menu()
 
 except KeyboardInterrupt:
     print("\n")
-    print("[bold][blue] Exiting...[/blue][/bold]")
+    console.print("[bold][blue] Exiting...[/blue][/bold]")
     sleep(1)
 
 except TypeError:
     os.system("clear")
     banner()
     menu_print()
-    print(f"\n[bold][red] INVALID COMMAND [/red][/bold]")
+    console.print(f"\n[bold][red] INVALID COMMAND [/red][/bold]")
     rerun()

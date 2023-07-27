@@ -1,6 +1,7 @@
 from pystac_client import Client
 from shapely.geometry import Point
 import requests
+import rioxarray
 from simple_term_menu import TerminalMenu
 from rich.console import Console
 
@@ -37,7 +38,6 @@ def download_tiff(output, lat, lng):
     client = Client.open(api_url)
     point = Point(lat, lng)
 
-
     search = client.search(
         collections=[collection],
         intersects=point,
@@ -48,13 +48,16 @@ def download_tiff(output, lat, lng):
     assets = items[0].assets
 
     download_tiff.options = []
-    
-    for key, asset in assets.items():
-        if asset.title[len(asset.title) - 4:].lower() == "tiff":
-            download_tiff.options.append(asset.title)
 
-        print(asset.title[len(asset.title) - 4:].lower())
-        print(asset)
+    urls = []
+    for asset in assets.items():
+        if asset != None:
+            href = asset[1].href
+            if href != None:
+                ext_num = len(href) - 3
+                if href[ext_num:].lower() == "tif":
+                    download_tiff.options.append(asset[0])
+                    urls.append(href)
     
     download_tiff.terminal_menu = TerminalMenu(
         download_tiff.options,
@@ -65,14 +68,17 @@ def download_tiff(output, lat, lng):
     )
 
     download_tiff.menu_entry_index = download_tiff.terminal_menu.show()
-    # print out output path and metadata
+    sel_url = urls[download_tiff.menu_entry_index]
+    nir = rioxarray.open_rasterio(sel_url)
+    console.print(nir)
+    nir.rio.to_raster(output)
 
 
 def retrieve_jpeg_image():
-    output  = console.input("Enter [bold blue]Output Path[/]: ")
     result = False
 
     while result != True:
+        output  = console.input("Enter [bold blue]Output Path[/]: ")
         lat = console.input("Enter [bold blue]Latitude[/]: ")
         lon = console.input("Enter [bold blue]Longitude[/]: ")
 
@@ -85,15 +91,17 @@ def retrieve_jpeg_image():
     
 
 def retrieve_raster_data():
-    output  = console.input("Enter [bold blue]Output Path[/]: ")
     result = False
 
     while result != True:
+        output  = console.input("Enter [bold blue]Output Path[/]: ")
         lat = console.input("Enter [bold blue]Latitude[/]: ")
         lon = console.input("Enter [bold blue]Longitude[/]: ")
+        
 
-        if check_file(output, ".tiff") and check_coordinates(lat, lon):
+        if check_file(output, ".tif") and check_coordinates(lat, lon):
             result = True
+            
             if len(output) == 0:
                 output = "../output/output.tiff"
 

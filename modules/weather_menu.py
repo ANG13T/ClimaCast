@@ -47,5 +47,5 @@ except TypeError:
     os.system("clear")
     banner()
     menu_print()
-    print(f"\n[bold][red] INVALID COMMAND [/red][/bold]")
+    console.print(f"\n[bold][red] INVALID COMMAND [/red][/bold]")
     rerun()
