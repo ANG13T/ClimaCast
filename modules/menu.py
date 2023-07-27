@@ -52,6 +52,7 @@ try:
 
         if menu.menu_entry_index == 4:
             about()
+            rerun()
         
         if menu.menu_entry_index == 5:
             print("[bold][blue] Exiting...[/blue][/bold]")
