@@ -14,4 +14,5 @@ def banner():
     console.print("              [blue underline]github.com/ANG13T/ClimaCast[/] \n")
 
 def menu_print():
-    print("==================== ClimaCast Options ====================")
+    print("══════════════════ ClimaCast Options ══════════════════")
+           
