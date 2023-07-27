@@ -25,7 +25,7 @@ try:
         )
         run_imagery.menu_entry_index = run_imagery.terminal_menu.show() / 2
         if run_imagery.menu_entry_index == 0:
-            fetch_image()
+            retrieve_jpeg_image()
             
         if run_imagery.menu_entry_index == 1:
             retrieve_raster_data()
