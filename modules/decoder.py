@@ -1,14 +1,20 @@
 import numpy
 import scipy.io.wavfile
 import scipy.signal
+from dotenv import load_dotenv
+import os
 from rich.console import Console
 import PIL
 
 console = Console()
 
+def get_resample_rate():
+    load_dotenv()
+    return int(os.getenv('RESAMPLE_RATE'))
+
 class Decoder(object):
 
-    RATE = 20800
+    RATE = get_resample_rate()
     NOAA_LINE_LENGTH = 2080
     filename = ""
 

@@ -2,7 +2,6 @@ from simple_term_menu import TerminalMenu
 from time import sleep
 from modules.imagery import *
 from rich.console import Console
-import os
 from modules.menu import banner, menu_print, rerun
 
 console = Console()
