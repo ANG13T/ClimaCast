@@ -3,37 +3,37 @@
 </p>
 
 ## About
-DroneXtract is a comprehensive digital forensics suite for DJI drones made with Golang. It can be used to analyze drone sensor values and telemetry data, visualize drone flight maps, audit for criminal activity, and extract pertinent data within multiple file formats. 
+ClimaCast is a command-line tool written with Python that provides meteorology reports and forecasts, satellite pass predictions, communications decoding, and imagery analysis for NOAA satellites.
 
 ## Preview
 
-<img alt="DroneXtract logo" width="400" src="https://github.com/ANG13T/ClimaCast/blob/main/assets/preview.png">
+<img alt="ClimaCast preview" width="400" src="https://github.com/ANG13T/ClimaCast/blob/main/assets/preview.png">
 
 ## Features
-DroneXtract features four main suites for drone forensics and auditing. They include the following:
+ClimaCast features four main features for NOAA satellite reconnaissance. They include the following:
 
-### DJI File Parsing
+### 🌦  Weather Forecasts and Alerts
 You can visualize and extract information from DJI file formats such as CSV, KML, and GPX using the parsing tool.
 The parsed information can be saved into an alternative file format when inputted an output file path.
 The image below includes an example of a parsed file output and the type of data extracted from the file.
 
 <img alt="DroneXtract logo" height="300" src="https://github.com/ANG13T/DroneXtract/blob/main/assets/demo-1.png">
 
-### Steganography
+###  🛰  Pass Predictor
 Steganography refers to the process of revealing information stored within files.
 The DroneXtract steganography suite allows you to extract telemetry and valuable data from image and video formats.
 Additionally, the extracted data can be exported to four different file formats.
 
 <img alt="DroneXtract logo" height="300" src="https://github.com/ANG13T/DroneXtract/blob/main/assets/demo-2.png">
 
-### Telemetry Visualization
+### 📡  APT Image Decoder
 The telemetry visualization suite contains a flight path mapping generator and a telemetry graph visualizer.
 The flight path mapping generator creates an image of a map indicating the locations the drone traveled to enroute and the path it took.
 The telemetry graph visualizer plots a graph for each of the relevant telemetry or sensor values to be used for auditing purposes. 
 
 <img alt="DroneXtract logo" width="600" src="https://github.com/ANG13T/DroneXtract/blob/main/assets/demo-3.png">
 
-### Flight and Integrity Analysis
+### 🌎  Meteorological Image Analysis
 The flight and integrity analysis tool iterates through all the telemetry values the drone logged during its flight.
 Once the values are collected, it calculates the maximum variance assumed by the value and checks for suspicious data gaps.
 This tool can be used to check for anomalous data or any file corruption that may have taken place.
