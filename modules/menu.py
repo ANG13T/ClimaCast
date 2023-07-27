@@ -3,9 +3,11 @@ from time import sleep
 from simple_term_menu import TerminalMenu
 from modules.rerun import rerun
 from modules.about import about
+from modules.banner import *
 
 try:
-    #main_menu()
+    banner()
+    menu_print()
 
     def menu():
         menu.options = [
@@ -46,7 +48,7 @@ try:
 
         if menu.menu_entry_index == 3:
             # about()
-            # run_again()
+            rerun()
 
         if menu.menu_entry_index == 4:
             about()

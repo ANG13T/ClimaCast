@@ -1,16 +1,11 @@
-# from modules.weather import *
 import os
 from dotenv import load_dotenv
 from rich.console import Console
 
-# get_forecast_from_lat_lon(39.7456, -97.0892)
 console = Console()
 
 
 try:
-    """
-    Imports the main menu with all its functions
-    """
     def import_env():
         load_dotenv()
         N2YO_Key = os.getenv('N2YO_API')
