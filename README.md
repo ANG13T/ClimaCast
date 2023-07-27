@@ -13,34 +13,41 @@ ClimaCast is a command-line tool written with Python that provides meteorology r
 ClimaCast features four main features for NOAA satellite reconnaissance. They include the following:
 
 ### 🌦  Weather Forecasts and Alerts
-You can visualize and extract information from DJI file formats such as CSV, KML, and GPX using the parsing tool.
-The parsed information can be saved into an alternative file format when inputted an output file path.
-The image below includes an example of a parsed file output and the type of data extracted from the file.
+Get up-to-date weather forecasts, data, and alerts from NOAA satellites. You can choose to get information via GPS coordinates, station ID, or area code. The retrieved data will be visualized and formatted in a table outline. 
+The image below includes an example of a parsed forecasting report provided using an inputted GPS coordinate.
 
 <img alt="Display" width="800" src="https://github.com/ANG13T/ClimaCast/blob/main/assets/display-3.png">
 
 ###  🛰  Pass Predictor
-Steganography refers to the process of revealing information stored within files.
-The DroneXtract steganography suite allows you to extract telemetry and valuable data from image and video formats.
-Additionally, the extracted data can be exported to four different file formats.
+Predict radio or visual satellite passes of all NOAA satellites by inputting your GPS coordinates, altitude, and visibility.
+Pass prediction data will be visualized and displayed in a table outline as shown below.
 
 <img alt="Display" width="800" src="https://github.com/ANG13T/ClimaCast/blob/main/assets/display-4.png">
 
 ### 📡  APT Image Decoder
-The telemetry visualization suite contains a flight path mapping generator and a telemetry graph visualizer.
-The flight path mapping generator creates an image of a map indicating the locations the drone traveled to enroute and the path it took.
-The telemetry graph visualizer plots a graph for each of the relevant telemetry or sensor values to be used for auditing purposes. 
+Decode NOAA satellite images by inputting audio MP3 files of satellite transmissions.
+There is also a resampling feature to resample the file before decoding.
+The output of the decoding is saved as a PNG file. An example output is displayed below.
 
 <img alt="Display" height="300" src="https://github.com/ANG13T/ClimaCast/blob/main/assets/display-5.png">
 
 ### 🌎  Meteorological Image Analysis
-The flight and integrity analysis tool iterates through all the telemetry values the drone logged during its flight.
-Once the values are collected, it calculates the maximum variance assumed by the value and checks for suspicious data gaps.
-This tool can be used to check for anomalous data or any file corruption that may have taken place.
+Retrieve meterological images from the Sentinel-2 data collection for remote sensing analysis.
+Thumbnail satellite images can be saved in the JPG format.
+Remote raster data files (one per optical band, as acquired by the multi-spectral instrument) can be saved as a TIF file.
 
 <img alt="Display" height="300" src="https://github.com/ANG13T/ClimaCast/blob/main/assets/display-1.png"> <img alt="Display" height="300" src="https://github.com/ANG13T/ClimaCast/blob/main/assets/display-2.png">
 
 ## Usage
+The CLI will prompt for N2YO credentials if none are present in your environmental variables. Ensure to configure it as an environment variable.
+
+Create an account at [**N2YO**](https://n2yo.com) and save the API key.
+
+Ensure the N2YO API Key is configured in the `.env` file
+```
+N2YO_API=API_KEY_HERE
+```
+
 To run ClimaCast, you will need Python3 and Pip installed.
 
 ```bash
@@ -48,16 +55,17 @@ $ pip install -r requirements.txt
 $ python3 climacast.py
 ```
 
+### APIs Used
+- [NOAA Weather Services](https://api.weather.gov): Retrieve Forecasts and Weather Details
+- [N2YO](https://n2yo.com/api): Retrieve Satellite Pass Predictions
+- [AWS Sentinel-2 Dataset](https://registry.opendata.aws/sentinel-2-l2a-cogs/): Retrieve Sentinel-2 Satellite Imagery
+
 ## Configuration
-There are a set of environment variables utilized in DroneXtract. In order to tailor the values to your specific drone / investigation scenario, you can go to the `.env` file and adjust the following values:
+There are a set of environment variables utilized in ClimaCast. In order to set up the API and tailor the values for your specific meteorological research purposes, you can go to the `.env` file and adjust the following values:
 
-`TELEMETRY_VIS_DOWNSAMPLE` downsampling number for values to be used for telemetry visualization
+`N2YO_API` N2YO API Key
 
-`FLIGHT_MAP_DOWNSAMPLE` downsampling number for values to be used for flight path mapping
-
-`ANALYSIS_DOWNSAMPLE` downsampling number for values to be used for integrity analysis
-
-`ANALYSIS_MAX_VARIANCE` maximum variance allowed between max and min value for analysis values
+`RESAMPLE_RATE` resampling number for satellite APT decoder
 
 ## Learning and Resources
 To learn more about DJI drone digital forensics and the features of DroneXtract, refer to [this article](https://medium.com/@angelinatsuboi/a-comprehensive-guide-to-digital-forensics-with-dji-drones-fd7ef5af2891).
