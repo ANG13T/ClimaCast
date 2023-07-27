@@ -2,6 +2,8 @@ from simple_term_menu import TerminalMenu
 from time import sleep
 from modules.weather import *
 from rich.console import Console
+from modules.menu import banner, menu_print, rerun
+import os
 
 console = Console()
 
@@ -42,7 +44,8 @@ except KeyboardInterrupt:
     sleep(1)
 
 except TypeError:
-    # os.system("clear")
-    # brute_banner()
-    console.print("\n[bold][red] INVALID COMMAND [/red][/bold]")
-    # run_again()
+    os.system("clear")
+    banner()
+    menu_print()
+    print(f"\n[bold][red] INVALID COMMAND [/red][/bold]")
+    rerun()

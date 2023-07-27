@@ -4,6 +4,7 @@ from simple_term_menu import TerminalMenu
 from modules.rerun import rerun
 from modules.about import about
 from modules.banner import *
+import os
 
 try:
     banner()
@@ -47,7 +48,7 @@ try:
             rerun()
 
         if menu.menu_entry_index == 3:
-            # about()
+            import modules.imagery_menu
             rerun()
 
         if menu.menu_entry_index == 4:
@@ -66,7 +67,8 @@ except KeyboardInterrupt:
     sleep(1)
 
 except TypeError:
-    # os.system("clear")
-    # brute_banner()
-    print(f"\n[bold][red] Command Not Understood [/red][/bold]")
-    # run_again()
+    os.system("clear")
+    banner()
+    menu_print()
+    print(f"\n[bold][red] INVALID COMMAND [/red][/bold]")
+    rerun()

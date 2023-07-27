@@ -19,3 +19,9 @@ def fetch_image():
     assets = items[0].assets
 
     print(assets["thumbnail"].href)
+
+def retrieve_jpeg_image():
+    return
+
+def retrieve_raster_data():
+    return
