@@ -15,7 +15,7 @@ def about():
     console.print("\n📡  [bold]APT Image Decoder[/]\n")
     console.print("Decode NOAA satellite images by inputting audio MP3 files of satellite transmissions.")
     console.print("\n🌎  [bold]Meterological Image Analysis[/]\n")
-    console.print("Analyze meterological imagery of NOAA satellites for remote sensing analysis.")
+    console.print("Retrieve meterological images from the Sentinel-2 data collection for remote sensing analysis.")
     console.print("\n[bold underline cyan]About the Developer[/]\n")
     console.print("ClimaCast was created by Angelina Tsuboi (G4LXY). To get in touch with me, you can reach out via the following methods:\n")
     console.print("[bold]Website:[/] angelinatsuboi.com")
