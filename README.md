@@ -1,5 +1,5 @@
 <p align="center">
-  <img align="center" alt="DroneXtract logo" width="600" src="https://github.com/ANG13T/DroneXtract/blob/main/assets/graphic.png">
+  <img align="center" alt="DroneXtract logo" width="600" src="https://github.com/ANG13T/ClimaCast/blob/main/assets/ClimaCast.png">
 </p>
 
 ## About
@@ -17,28 +17,28 @@ You can visualize and extract information from DJI file formats such as CSV, KML
 The parsed information can be saved into an alternative file format when inputted an output file path.
 The image below includes an example of a parsed file output and the type of data extracted from the file.
 
-<img alt="DroneXtract logo" height="300" src="https://github.com/ANG13T/DroneXtract/blob/main/assets/demo-1.png">
+<img alt="Display" width="800" src="https://github.com/ANG13T/ClimaCast/blob/main/assets/display-3.png">
 
 ###  🛰  Pass Predictor
 Steganography refers to the process of revealing information stored within files.
 The DroneXtract steganography suite allows you to extract telemetry and valuable data from image and video formats.
 Additionally, the extracted data can be exported to four different file formats.
 
-<img alt="DroneXtract logo" height="300" src="https://github.com/ANG13T/DroneXtract/blob/main/assets/demo-2.png">
+<img alt="Display" width="800" src="https://github.com/ANG13T/ClimaCast/blob/main/assets/display-4.png">
 
 ### 📡  APT Image Decoder
 The telemetry visualization suite contains a flight path mapping generator and a telemetry graph visualizer.
 The flight path mapping generator creates an image of a map indicating the locations the drone traveled to enroute and the path it took.
 The telemetry graph visualizer plots a graph for each of the relevant telemetry or sensor values to be used for auditing purposes. 
 
-<img alt="DroneXtract logo" width="600" src="https://github.com/ANG13T/DroneXtract/blob/main/assets/demo-3.png">
+<img alt="Display" height="300" src="https://github.com/ANG13T/ClimaCast/blob/main/assets/display-5.png">
 
 ### 🌎  Meteorological Image Analysis
 The flight and integrity analysis tool iterates through all the telemetry values the drone logged during its flight.
 Once the values are collected, it calculates the maximum variance assumed by the value and checks for suspicious data gaps.
 This tool can be used to check for anomalous data or any file corruption that may have taken place.
 
-<img alt="DroneXtract logo" height="300" src="https://github.com/ANG13T/DroneXtract/blob/main/assets/demo-4.png">
+<img alt="Display" height="300" src="https://github.com/ANG13T/ClimaCast/blob/main/assets/display-1.png"> <img alt="Display" height="300" src="https://github.com/ANG13T/ClimaCast/blob/main/assets/display-2.png">
 
 ## Usage
 To run ClimaCast, you will need Python3 and Pip installed.
@@ -58,6 +58,9 @@ There are a set of environment variables utilized in DroneXtract. In order to ta
 `ANALYSIS_DOWNSAMPLE` downsampling number for values to be used for integrity analysis
 
 `ANALYSIS_MAX_VARIANCE` maximum variance allowed between max and min value for analysis values
+
+## Learning and Resources
+To learn more about DJI drone digital forensics and the features of DroneXtract, refer to [this article](https://medium.com/@angelinatsuboi/a-comprehensive-guide-to-digital-forensics-with-dji-drones-fd7ef5af2891).
 
 ## Contributing
 DroneXtract is open to any contributions. Please fork the repository and make a pull request with the features or fixes you want to be implemented.
