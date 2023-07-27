@@ -87,3 +87,6 @@ Sentinel-2 Cloud-Optimized GeoTIFFs
 https://carpentries-incubator.github.io/geospatial-python/05-access-data/
 
 - explain STAC and GEOTIFFs and TIFFs file format
+
+
+4.89, 52.37
