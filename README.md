@@ -32,9 +32,9 @@ The output of the decoding is saved as a PNG file. An example output is displaye
 <img alt="Display" height="300" src="https://github.com/ANG13T/ClimaCast/blob/main/assets/display-5.png">
 
 ### 🌎  Meteorological Image Analysis
-Retrieve meterological images from the Sentinel-2 data collection for remote sensing analysis.
+Retrieve meteorological images from the Sentinel-2 data collection for remote sensing analysis.
 Thumbnail satellite images can be saved in the JPG format.
-Remote raster data files (one per optical band, as acquired by the multi-spectral instrument) can be saved as a TIF file.
+Remote raster data files (one per optical band, as acquired by the multi-spectral instrument) can be saved as a [TIF file](https://carpentries-incubator.github.io/geospatial-python/05-access-data/).
 
 <img alt="Display" height="300" src="https://github.com/ANG13T/ClimaCast/blob/main/assets/display-1.png"> <img alt="Display" height="300" src="https://github.com/ANG13T/ClimaCast/blob/main/assets/display-2.png">
 
@@ -68,21 +68,17 @@ There are a set of environment variables utilized in ClimaCast. In order to set 
 `RESAMPLE_RATE` resampling number for satellite APT decoder
 
 ## Learning and Resources
-To learn more about DJI drone digital forensics and the features of DroneXtract, refer to [this article](https://medium.com/@angelinatsuboi/a-comprehensive-guide-to-digital-forensics-with-dji-drones-fd7ef5af2891).
+To learn more about meteorology, weather satellites, and the development of ClimaCast, refer to [this article](https://medium.com/@angelinatsuboi/a-comprehensive-guide-to-digital-forensics-with-dji-drones-fd7ef5af2891).
 
 ## Contributing
-DroneXtract is open to any contributions. Please fork the repository and make a pull request with the features or fixes you want to be implemented.
+ClimaCast is open to any contributions. Please fork the repository and make a pull request with the features or fixes you want to be implemented.
 
 ## Upcoming
-- DUML parser for firmware integrity checking
-- DJI Flight Log TXT parsing for the parsing suite
-- GEOJSON parsing output for SRT files in the steganography suite
+- Other decoder formats such as LRPT and DVB
+- Implement custom pass prediction algorithms such as SGP4
+- Make satellite imagery retrieval more cohesive and grid-based
 
 ## Support
-If you enjoyed DroneXtract, please consider [becoming a sponsor](https://github.com/sponsors/ANG13T) in order to fund my future projects. 
+If you enjoyed ClimaCast, please consider [becoming a sponsor](https://github.com/sponsors/ANG13T) in order to fund my future projects. 
 
 To check out my other works, visit my [GitHub profile](https://github.com/ANG13T).
-
-https://carpentries-incubator.github.io/geospatial-python/05-access-data/
-
-- explain STAC and GEOTIFFs and TIFFs file format
