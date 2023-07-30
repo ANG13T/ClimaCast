@@ -1,4 +1,10 @@
-rich==13.4.2
-simple_term_menu==1.6.1
+certifi==2023.7.22
+chardet==4.0.0
+idna==2.10
+markdown-it-py==3.0.0
+mdurl==0.1.2
+pygments==2.15.1
 requests==2.25.1
-simple_term_menu==1.6.1
+rich==13.4.2
+simple-term-menu==1.6.1
+urllib3==1.26.16
